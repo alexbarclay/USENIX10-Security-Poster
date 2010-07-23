@@ -1,0 +1,32 @@
+\section*{Research Design and Methods}
+\subsection*{Workflow}
+The XNAT workflow is defined as the main sequence in \ref{fig:workflow}\cite{xnat}, our redaction process integrates into the XNAT framework by the provided pipeline feature.
+
+This change is not exposed to the user, and the workflow process begins as normal at acquistion time. It is only after raw data is collected and stored according to the institution's local policy and is released from quarantine, that the option to redact data is provided.
+
+\begin{figure}[hbt]
+       \center{\includegraphics[scale=1]{workflow_pipeline.png}}
+        \caption{\label{fig:workflow} Neuroimage redaction process workflow as experianced by the end users (modification in bold)}
+\end{figure}
+
+%what user sees
+To redact the data the user manually initiates the redaction process which starts the redaction pipeline. The output of this pipeline is that redacted data is tagged and inputed into the system as new data. Being treated as new data, it follows normal XNAT workflow and is quarantined again, mandating a secondary sanity check before being being part of the normal XNAT mechanisms, this time under an privacy mapped user id. This privacy mapped data is used as normal data, being available for analysis and sharing with no modifications to XNAT itself.
+
+%user choice
+Specific information from the original DICOM file may be desirable, and needed, to be exported along with the redacted dataset. In this case, user defined options can keep embedded subject data (such as age, weight) in the resultant DICOM dataset. It is the duty of investigator to ensure multiple remote datasets aren't shared to the same entity and combined if that would violate privacy compliance. A privacy map naming scheme will be provided to counter this threat\cite{ohm}. 
+
+%can't figure out a nice transition from userflow to dataflow
+While the user workflow and interface to XNAT remains unchanged, there are some loosely coupled extensions to XNAT which allow redaction to occur. In \ref{fig:dataworkflow}, a logical view of the data path is presented. 
+
+\begin{figure}[hbt]
+       \center{\includegraphics[scale=1]{data_workflow.png}}
+        \caption{\label{fig:dataworkflow} XNAT and Redaction Data Path (modifications in bold)}
+\end{figure}
+
+This data path is a supported extension to the XNAT framework, designed to allow additional features. In practice, XNAT calls an external program, like ours, which will be running on the same computer to manipulate data and communicate back to the XNAT. During this process, a copy of the data is made for the redaction engine, from which DICOM sanitization and verification occurs and original personally identifiable information is preserved in the privacy map. From here, the cleaned DICOM file are fed back into the XNAT similar to original acquisition.
+
+% Do we need this part? Not sure if this hurts us or not. I think it's important since otherwise why have a privacy map, we need to expose this data is some manner.
+The privacy map is not exposed to the user from XNAT, and due to the sensitive nature of contained data will only be available to administrators using a command line tool/API if integration of redacted information needs to be made available. 
+
+% Sept 11 AB Changed process workflow picture to new architecture
+% Sept 11 AB Seperated Data workflow to new picture represening pipline architecute

@@ -1,0 +1,12 @@
+digraph G{
+    node [shape=record]; 
+    "Capture" -> Quarantine;
+    Quarantine -> "Local Use";
+    "Local Use" -> "Coollaboration";
+    "Coollaboration" -> "Public Access"
+    "Local Use" -> "Redaction Pipeline";
+    "Redaction Pipeline" -> "Quarantine";
+    #{rank=same; "Capture" Quarantine "Local Use" Coollaboration "Public Access"}
+    "Redaction Pipeline" [style=bold] 
+    }
+}

@@ -1,0 +1,15 @@
+\subsection*{Advantages over Current Solutions}
+
+%The proposed effort has two primary objectives: (1) it provides a privacy map for linking and managing redacted identifiers across institutional boundaries, and (2) it is part of the pre-processing pipeline and can be invoked at the same time as the upload functionality. 
+
+The proposed effort has three primary advantages over current tools and methodologies: (1) it provides a privacy map for linking and managing redacted identifiers across institutional boundaries, (2) it is part of the XNAT processing pipeline, leveraging the existing framework and interface, (3) unencumbered redaction building block, and lastly provide (4) verifiable redaction. 
+
+The primary benefit of the privacy map is apparent; it automatically assigns a redacted identifier to subject record and removes potentially identifable information. This relieves the researcher of the burden of maintaining the subject's new identifier throughout a study.
+
+The secondary benefit of the privacy map is that there is persistence in the sanitized identifier,  allowing multiple sessions over multiple researchers to be tracked without the need for manual maintenance. This fixes a huge problem with large transient data sets, adding consistency by not counting subjects twice.
+
+Researchers will not have to maintain multiple data sets, their interface to data is mediated though XNAT, where the original image and a redacted image are centrally managed, and collaboration is facilitated.
+
+Project code will be freely available and open source on a web site for others to extend, modify and freely distribute. The license will be an open source BSD style license, acting as a catalyst for innovation and development of a more complete redaction system.
+
+Redaction will be performed and forensically verified to ensure confidentially of subject data. This technique is accepted for handling digital evidence, providing researchers legally accepted protection, and assurance that shared subject data does not fall under the breech notification requirements of HIPAA/HITECH.

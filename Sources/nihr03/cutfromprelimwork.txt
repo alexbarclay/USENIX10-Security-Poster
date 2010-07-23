@@ -1,0 +1,29 @@
+\section*{Preliminary Studies}
+
+This effort builds upon the investigators and associated personnels experience in 
+\subsection{HIPAA Compliance}
+\subsection{Data management and XNAT}
+
+The XNAT platform has been studied as a suitable candidate framework within which to embed a comprehensive digital redaction solution.
+In particular, the PI led a team (with cooperation from the Neuroinformatics Research Group at the Washington University School of Medicine) that conducted an information security risk assessment for XNAT, yielding a deeper understanding of threats to and vulnerabilities in the platform \cite{schimke09}.
+It also afforded researchers at TU the opportunity to become familiar with the inner-workings of this popular neuroimage archival system.
+The risk assessment therefore provides an excellent basis on which to define operational and security requirements for an integrated digital redaction solution.
+
+\subsection{Redaction}
+Redaction is the process of removing privileged information from a document or set of documents before its presentation to other parties. 
+The reasons for redaction are many and varied. 
+The same concerns exist for privileged information residing on electronic storage devices and in electronic, but no standard method of digital redaction has been adopted by the legal community.  Computerized methods that mimic the blackout process exist, as do those for mimicking the physical removal method.  
+The latter typically involves the collection of all readable documents from a computer, placing them in a set, and selecting the items to redact.  
+Yet, while electronic blackout and removal methods can sanitize a document or set of documents found on an electronic device, they do nothing to redact logical 
+copies or copied fragments of the document that remain. 
+
+While tools for digital redaction have focused almost exclusively on electronic documents, a more general solution remains elusive.
+This can, in part, be attributed to the complexities associated with a single solution operating over  the universe of possible data structures.
+\cite{Barclay2007} accounted for a number of obstacles to effective general purpose 
+digital redaction, specifically:
+
+
+The proposed effort addresses one aspect of the larger redaction problem, and is specifically intended to facilitate large-scale inter-organizational collaboration \cite{barclay09}.  
+The requirements of HIPAA necessitate a higher level of understanding of the presentation of the underlying data structure for correct and complete data removal.
+Thus, data must be deconstructed and considered in each of the different layers in which it can reside -- hardware, operating system, software, and the data analysis stack. 
+The proposed solution offers such an expansive view of PII in neuroimagery files, and integrates the redaction process within established data acquisition and curation workflow patterns.

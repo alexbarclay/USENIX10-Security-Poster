@@ -1,0 +1,20 @@
+digraph G{
+    node [shape=record]; 
+    "Unredacted Neuroimages" -> XNAT;
+    XNAT -> "Redaction Engine";
+    "Redaction Engine" -> "Privacy Map";
+    "Privacy Map" -> "Redaction Engine";
+    "XNAT Translator" -> XNAT;
+    XNAT -> "External Users"
+    "Redaction Engine" -> "Redacted Images";
+    "Redacted Images" -> "XNAT Translator";
+    {rank=same; "Unredacted Neuroimages" XNAT "External Users"}
+    {rank=same; "Redaction Engine" "XNAT Translator" "Redacted Images"}
+    "Redaction Engine"   [style=bold] 
+    "Redacted Images"  [style=bold] 
+    "XNAT Translator"[style=bold] 
+    "Privacy Map"  [style=bold] 
+    
+    
+    }
+}
